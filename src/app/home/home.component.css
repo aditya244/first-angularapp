@@ -1,0 +1,44 @@
+.incClass{
+    padding: auto;
+    text-align: center;
+    background: #82D173;
+    color: azure;
+    border-radius: 5px;
+    border: none;
+}
+
+.incClassDanger{
+    padding: auto;
+    text-align: center;
+    background: #EF6F6C;
+    color: azure;
+    border-radius: 5px;
+    border: none;
+}
+
+.decClass {
+    padding: auto;
+    text-align: center;
+    background: #82D173;
+    color: azure;
+    border-radius: 5px;
+    border: none;
+}
+
+.decClassDanger {
+    padding: auto;
+    text-align: center;
+    background: #EF6F6C;
+    color: azure;
+    border-radius: 5px;
+    border: none;
+}
+
+.resetClass{
+    padding: auto;
+    text-align: center;
+    background: #82D173;
+    color: azure;
+    border-radius: 5px;
+    border: none;
+}

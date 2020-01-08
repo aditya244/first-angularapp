@@ -1,0 +1,67 @@
+
+<!-- <p> To-do List - Items ({{itemCount}})</p>
+<form>
+    <input type="text" placeholder={{goalText}}>
+    <!-- <input type="text" placeholder="My Todo" [(ngModel)]="todoText"> -->
+    <!-- <input type="submit" [value]="btnText">
+</form>
+<p>{{todoText}}</p> -->
+
+<p> Counter value : {{counter}}</p>
+<input type="button" (click)='onIncHandler()' value="+" [class.incClass] = "counter <= 0" [class.incClassDanger] = "counter > 0">
+<input type="button" (click)='onDecHandler()' value="-" [class.decClass] = "counter > 0" [class.decClassDanger] = "counter <= 0"><br>
+<input type="button" (click)='onResetHandler()' value="Reset" [class.resetClass] = "counter > 0">
+
+<span [style.font-size.px] = "20"> Hello </span>
+<!-- <h1 [style.color]="blue">This is a Blue Heading</h1> -->
+<!-- <input type="text" placeholder="My first Todo" [(ngModel)] = "todoText"> -->
+<!-- <input type="text" placeholder="Hello input" #inputhello>
+<input type="button" (click)='getValue(inputhello)' value="Get Value"> -->
+
+
+
+<!-- Here, I am implementing ngIf along with the use of Template Reference Variable to provide a reference 
+to the div which will appear in case of the else statement. -->
+
+<p> Use of ngIf</p>
+<input type="button" (click)='onLoginHandler()' value="Login">
+<input type="button" (click)='onLogoutHandler()' value="Logout">
+<div *ngIf="isLoggedIn; else logout">
+    <h3> The user is Logged In </h3>
+</div>
+<ng-template #logout>
+    <p>The user is logged out.</p>
+</ng-template>
+
+<!-- Basically, what I understood is that two binding is like the OnChange. More of it, it updates the UI 
+as well as the component. -->
+<!-- Two way binding. -->
+<p> We are going to perform two way binidng here.</p>
+<input type="text" [(ngModel)] = "twoWayText"/>
+<br>
+{{twoWayText}}
+
+
+<!-- Here, I have implemented swtich case. In a drop down menu we can select diff options and accordingly
+the relevant information will appear. -->
+<div><br>
+    Select Country : <select (change)="choice($event.target.value)">
+        <option>Select Country</option>
+        <option *ngFor="let c of countries" [value] ="c.code">{{c.country}}</option>
+    </select><br>
+    <!-- {{selectedCountryCode}} -->
+    <div [ngSwitch]="selectedCountryCode">
+        <div *ngSwitchCase = "'ind'">
+            <p> India calling code is +91.</p>
+        </div>
+        <div *ngSwitchCase = "'uae'">
+            <p> United Arab Emirates calling code is +380.</p>
+        </div>
+        <div *ngSwitchCase = "'uk'">
+            <p> United Kingdom calling code is +44.</p>
+        </div>
+        <div *ngSwitchDefault>
+            <p>Select your country</p>
+        </div>
+    </div>
+</div>
